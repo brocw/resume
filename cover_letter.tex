@@ -1,0 +1,147 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{letter}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+% \usepackage{supertabular}
+% \usepackage{tabularx}
+% \newlength{\fullcollw}
+% \setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+% Maybe no hyphens
+\usepackage[none]{hyphenat}%%%%
+
+% For skills formatting
+\usepackage{enumitem}
+
+% To Unicode
+\input{glyphtounicode}
+\pdfgentounicode=1 
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Broc Weselmann} \\[7.5pt]
+\href{https://github.com/brocw}{\raisebox{-0.05\height}\faGithub\ brocw} \ $|$ \ 
+\href{https://linkedin.com/in/brocweselmann}{\raisebox{-0.05\height}\faLinkedin\ brocweselmann} \ $|$ \ 
+% \href{https://brocweselmann.com}{\raisebox{-0.05\height}\faGlobe \ brocweselmann.com} \ $|$ \ 
+\href{mailto:brocweselmann@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ brocweselmann@gmail.com} \ $|$ \ 
+\href{tel:+13863163624}{\raisebox{-0.05\height}\faMobile \ (386) 316-3624} \\
+\end{tabularx}
+
+\vspace{0.4in}
+
+February 6th, 2026\\
+
+\vspace{0.2in}
+
+To the Publix Hiring Team,\\
+
+% Body
+\vspace{0.1in}
+
+I have been driven by fascination throughout my life. From a young age, I was introduced to the Dell home computer with Windows XP. I clicked all the buttons and slowly, by myself, figured out the intricacies of the machine. That began a fascination with computers; by the time I was twelve, I was already building my own and beginning to learn programming. My passion, curiosity, and desire to know all and everything about computers continue to this day, as I am set to graduate with a computer science degree from UCF in May of 2027. 
+
+For five years, I have been with Publix as an associate. My good friend Joe, who is now a CSTL, exclaimed with all of his heart what an opportunity Publix was for me. He couldn't have been more correct - I have been so grateful for Publix and the imprint it has had on my life and my character. I moved up from a Front Service Clerk to a Cashier quickly, excelling through courteous hard work. Yet, I wanted more, and was able to be promoted to the Grocery department. There, I saw the `innards' of the operation - the logistics, pallets, and the effort required to even bring out the product I scanned as a Cashier. I sensed then and now the `invisible' and `visible' software systems designed and maintained to control the grocery store operation I am so intimately involved in.
+
+I believe I am more than qualified to start developing those systems at Publix. Firstly, I joined a volunteer-based team developing a game modification played by over 500,000 people. In this role, I implemented complex GUIs, scripted event chains, and wrote documentation in collaboration with the over one hundred people on that team. My personal video game, `A Frail Qubit,' is written in the Godot game engine with GDScript, a Python-like language. I transferred that experience into Python itself, working with NumPy implementing machine learning algorithms. I have implemented classic computer science data structures using Java, and I have worked on experimental games in the Unity game engine with C\#. I have also created various static and WordPress-based websites for personal and business use, hosted on the DigitalOcean cloud provider.
+
+Thank you so much for the opportunity to advance my career at Publix. Please contact me by email or text if you have any further questions; I will get back to you as soon as I can. Finally, to concretely see my programming experience, please visit my GitHub (brocw). 
+
+% Closer
+\vspace{0.4in}
+
+Sincerely, \\
+Broc Weselmann \\
+Computer Science Student at UCF
+
+\end{document}

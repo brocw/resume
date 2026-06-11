@@ -1,0 +1,244 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+% Maybe no hyphens
+\usepackage[none]{hyphenat}%%%%
+
+% For skills formatting
+\usepackage{enumitem}
+
+% To Unicode
+\input{glyphtounicode}
+\pdfgentounicode=1 
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Broc Weselmann} \\[7.5pt]
+\href{https://github.com/brocw}{\raisebox{-0.05\height}\faGithub\ brocw} \ $|$ \ 
+\href{https://linkedin.com/in/brocweselmann}{\raisebox{-0.05\height}\faLinkedin\ brocweselmann} \ $|$ \ 
+% \href{https://brocweselmann.com}{\raisebox{-0.05\height}\faGlobe \ brocweselmann.com} \ $|$ \ 
+\href{mailto:brocweselmann@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ brocweselmann@gmail.com} \ $|$ \ 
+\href{tel:+13863163624}{\raisebox{-0.05\height}\faMobile \ (386) 316-3624} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+% \section{Summary}
+% This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2024 - May 2027 (Expected) & Bachelor's Degree in Computer Science at \textbf{University of Central Florida} \hfill \normalsize \\
+
+2021 - 2024 & Associate's Degree at \textbf{Daytona State College} \hfill \\ 
+
+% 2015 - 2019 & High School Diploma at \textbf{New Smyrna Beach High School} \hfill \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+
+\begin{joblong}{Publix | \textbf{Grocery Clerk}}{August 2021 - Present}
+\item Managed store product by unloading shipments, stocking shelves, and blocking aisles to ensure item availability, while averaging \textbf{30 hours per week}.
+\item Delivered exceptional customer service by bagging and cashiering systemically and effectively while maintaining a positive attitude and approach.
+\item Demonstrated flexibility by cross-training across both the Customer Service and Grocery departments and working at two stores.
+\end{joblong}
+
+\begin{joblong}{Planet Fitness | \textbf{Member Service Representative}}{May 2021 - July 2021}
+\item Guided and facilitated the new-member experience by conducting personal tours, explaining the various pieces of gym equipment, and answering customer inquiries.
+\item Maintained a strict cleaning rotation throughout each shift and upheld club standards to ensure a safe and welcoming environment.
+\end{joblong}
+  
+%----------------------------------------------------------------------------------------
+%	PERSONAL PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+
+\begin{joblong}{A Frail Qubit | \textbf{Solo Developer}}{January 2019 - Present}
+\item Spearheaded the complete end-to-end development of 'A Frail Qubit,' a story-based puzzle game built in the \textbf{Godot Engine} and programmed with \textbf{GDScript}.
+\item Designed, programmed, wrote, and tested all core project assets, including gameplay mechanics, narrative, pixel art, and \textbf{over 60 unique, handcrafted levels}.
+\end{joblong}
+
+\begin{joblong}{The New Order: The Last Days of Europe | \textbf{Senior Contributor}}{January 2020 - January 2022}
+\item Contributed to help develop a complete overhaul game modification called 'The New Order: Last Days of Europe', serving a player base of \textbf{over 500,000}.
+\item Implemented complex event chains, graphical user interfaces, main event pieces, and further content designed by volunteers around the world in a remote environment.
+\item Authored the new contributor Git guide, reducing onboarding frustration and allowing for non-technical volunteers to push localization changes.
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	VOLUNTEERING
+%----------------------------------------------------------------------------------------
+% \section{Voluuteering}
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabular}{@{} l l}
+    \textbf{Languages:} &  C++, C\#, C, GDScript, Java, Python \\
+    \textbf{Web Technologies:} &  HTML, CSS, JS, WordPress \\
+    \textbf{Tools \& Platforms:} &  Discord.js, Git, GNU/Linux, NumPy, Steamworks \\
+\end{tabular}
+
+\vfill
+
+% \center{\footnotesize Last updated: \today}
+
+\end{document}
