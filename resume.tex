@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,11pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -127,7 +127,7 @@
     }
     {
     \end{itemize}
-    \end{minipage}    
+    \end{minipage}\par\prevdepth=-1000pt\vspace{1pt} % even spacing after one-line entries
     }
 
 
@@ -152,11 +152,11 @@
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Broc Weselmann} \\[7.5pt]
-\href{https://github.com/brocw}{\raisebox{-0.05\height}\faGithub\ brocw} \ $|$ \ 
-\href{https://linkedin.com/in/brocweselmann}{\raisebox{-0.05\height}\faLinkedin\ brocweselmann} \ $|$ \ 
-% \href{https://brocweselmann.com}{\raisebox{-0.05\height}\faGlobe \ brocweselmann.com} \ $|$ \ 
-\href{mailto:brocweselmann@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ brocweselmann@gmail.com} \ $|$ \ 
-\href{tel:+13863163624}{\raisebox{-0.05\height}\faMobile \ (386) 316-3624} \\
+\small New Smyrna Beach, FL $|$ 
+\href{https://github.com/brocw}{github.com/brocw} $|$ 
+\href{https://linkedin.com/in/brocweselmann}{linkedin.com/in/brocweselmann} $|$ 
+\href{mailto:brocweselmann@gmail.com}{brocweselmann@gmail.com} $|$ 
+\href{tel:+13863163624}{(386) 316-3624} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -172,7 +172,8 @@
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2024 - May 2027 (Expected) & Bachelor's Degree in Computer Science at \textbf{University of Central Florida} \hfill \normalsize \\
+2024 - May 2027 & B.S. in Computer Science at \textbf{University of Central Florida} \hfill \normalsize \\
+ & Focus: Machine Learning, Transformer Models, Mechanistic Interpretability \\
 
 2021 - 2024 & Associate's Degree at \textbf{Daytona State College} \hfill \\ 
 
@@ -181,35 +182,55 @@
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
+%	PERSONAL PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+
+\begin{joblong}{\href{https://github.com/brocw/encyclopedia-ai}{Encyclopedia AI} | \textbf{Solo Developer}}{July 2025 - Present}
+\item Architected a \textbf{multi-agent LLM pipeline in Go} that plans, drafts, critiques, and revises articles autonomously.
+\item Designed a provider layer for local \textbf{Ollama} and OpenAI-compatible APIs with structured output, reasoning-model streaming, and retries; ran generation as resumable background jobs persisted in \textbf{SQLite}.
+\end{joblong}
+
+\begin{joblong}{\href{https://github.com/brocw/sinebot}{SINEBot} | \textbf{Solo Developer}}{June 2026 - Present}
+\item Built a \textbf{JavaScript} Discord bot for UCF's Society of Innovation and Neurodiversity in Engineering (SINE), serving \textbf{about 20 daily active users} with a \textbf{plugin registry} of daily games and Chart.js analytics.
+\item Shipped features iteratively from user feedback, including leaderboards, trend graphs, and distributions.
+\end{joblong}
+
+\begin{joblong}{\href{https://github.com/brocw/mern-travel-agent}{MERN Travel Agent} | \textbf{Backend \& DevOps, Team Project}}{March 2026 - April 2026}
+\item Set up the repo, \textbf{MongoDB} database, JWT auth, and bcrypt hashing for a \textbf{React/TypeScript} web app.
+\item Automated \textbf{DigitalOcean} deploys with a \textbf{GitHub Actions} CI/CD pipeline and PR integration tests.
+\end{joblong}
+
+% KnightHacks IX (Fall 2026): fill in and uncomment. Keep the header short; a wide header adds a gap.
+% \begin{joblong}{\href{https://github.com/brocw/REPO}{PROJECT NAME} | \textbf{KnightHacks IX, TRACK}}{October 2026}
+% \item What you built, and the part you owned.
+% \item Result: award or placement, or a measurable outcome.
+% \end{joblong}
+
+\begin{joblong}{\href{https://github.com/brocw/knight\_hacks\_viii}{Drone Route Optimizer} | \textbf{Algorithm Developer, KnightHacks VIII}}{October 2025}
+\item Designed the routing algorithm for NextEra Energy's challenge using VRP heuristics and \textbf{OR-Tools}.
+\end{joblong}
+
+\begin{joblong}{\href{https://github.com/brocw/gpt-1}{GPT-1 Language Model} | \textbf{Solo Developer}}{June 2026}
+\item Trained a GPT-1 transformer in \textbf{PyTorch} from Karpathy's lecture, adding scaled residuals and checkpointing.
+\end{joblong}
+
+\begin{joblong}{\href{https://store.steampowered.com/app/1697070/A_Frail_Qubit/}{A Frail Qubit} | \textbf{Solo Developer}}{January 2019 - Present}
+\item Developed a story-based puzzle game end-to-end in the \textbf{Godot Engine} with \textbf{GDScript}, creating all mechanics, narrative, pixel art, and \textbf{over 60 handcrafted levels}.
+\end{joblong}
+
+\begin{joblong}{\href{https://steamcommunity.com/sharedfiles/filedetails/?id=2438003901}{The New Order: The Last Days of Europe} | \textbf{Senior Contributor}}{January 2020 - January 2022}
+\item Implemented event chains, GUIs, and content for a total-overhaul game mod with \textbf{over 500,000 players}, and authored the contributor Git guide used by volunteers worldwide.
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
 \section{Work Experience}
 
 \begin{joblong}{Publix | \textbf{Grocery Clerk}}{August 2021 - Present}
-\item Managed store product by unloading shipments, stocking shelves, and blocking aisles to ensure item availability, while averaging \textbf{30 hours per week}.
-\item Delivered exceptional customer service by bagging and cashiering systemically and effectively while maintaining a positive attitude and approach.
-\item Demonstrated flexibility by cross-training across both the Customer Service and Grocery departments and working at two stores.
-\end{joblong}
-
-\begin{joblong}{Planet Fitness | \textbf{Member Service Representative}}{May 2021 - July 2021}
-\item Guided and facilitated the new-member experience by conducting personal tours, explaining the various pieces of gym equipment, and answering customer inquiries.
-\item Maintained a strict cleaning rotation throughout each shift and upheld club standards to ensure a safe and welcoming environment.
-\end{joblong}
-  
-%----------------------------------------------------------------------------------------
-%	PERSONAL PROJECTS
-%----------------------------------------------------------------------------------------
-\section{Projects}
-
-\begin{joblong}{A Frail Qubit | \textbf{Solo Developer}}{January 2019 - Present}
-\item Spearheaded the complete end-to-end development of 'A Frail Qubit,' a story-based puzzle game built in the \textbf{Godot Engine} and programmed with \textbf{GDScript}.
-\item Designed, programmed, wrote, and tested all core project assets, including gameplay mechanics, narrative, pixel art, and \textbf{over 60 unique, handcrafted levels}.
-\end{joblong}
-
-\begin{joblong}{The New Order: The Last Days of Europe | \textbf{Senior Contributor}}{January 2020 - January 2022}
-\item Contributed to help develop a complete overhaul game modification called 'The New Order: Last Days of Europe', serving a player base of \textbf{over 500,000}.
-\item Implemented complex event chains, graphical user interfaces, main event pieces, and further content designed by volunteers around the world in a remote environment.
-\item Authored the new contributor Git guide, reducing onboarding frustration and allowing for non-technical volunteers to push localization changes.
+\item Promoted from \textbf{Front Service Clerk to Cashier to Grocery Clerk}, cross-training at two stores.
+\item Unloaded shipments, stocked shelves, and maintained aisles while averaging \textbf{30 hours per week} during school.
 \end{joblong}
 
 %----------------------------------------------------------------------------------------
@@ -232,9 +253,10 @@
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabular}{@{} l l}
-    \textbf{Languages:} &  C++, C\#, C, GDScript, Java, Python \\
-    \textbf{Web Technologies:} &  HTML, CSS, JS, WordPress \\
-    \textbf{Tools \& Platforms:} &  Discord.js, Git, GNU/Linux, NumPy, Steamworks \\
+    \textbf{Languages:} &  Python, Go, TypeScript, C, GDScript \\
+    \textbf{Frameworks \& Data:} &  React, Node.js, Express, PyTorch, NumPy, SQLite, MongoDB, MySQL \\
+    \textbf{Agentic AI:} &  Claude Code, Codex, multi-agent LLM pipelines, Ollama \\
+    \textbf{Tools \& Platforms:} &  Git, GitHub Actions, GNU/Linux, DigitalOcean, Godot Engine \\
 \end{tabular}
 
 \vfill
