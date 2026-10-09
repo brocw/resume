@@ -1,274 +1,212 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
 \documentclass[letterpaper,11pt]{article}
 
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
-\usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
-\usepackage{tabularx}
-
-%for lists within experience section
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
 \usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
-\usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
-
-% Maybe no hyphens
-\usepackage[none]{hyphenat}%%%%
-
-% For skills formatting
-\usepackage{enumitem}
-
-% To Unicode
 \input{glyphtounicode}
-\pdfgentounicode=1 
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}\par\prevdepth=-1000pt\vspace{1pt} % even spacing after one-line entries
-    }
 
 
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
 
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Broc Weselmann} \\ \vspace{1pt}
+    \small (386) 316-3624 $|$ \href{mailto:brocweselmann@gmail.com}{\underline{brocweselmann@gmail.com}} $|$
+    \href{https://linkedin.com/in/brocweselmann}{\underline{linkedin.com/in/brocweselmann}} $|$
+    \href{https://github.com/brocw}{\underline{github.com/brocw}}
+\end{center}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
-
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Broc Weselmann} \\[7.5pt]
-\small New Smyrna Beach, FL $|$ 
-\href{https://github.com/brocw}{github.com/brocw} $|$ 
-\href{https://linkedin.com/in/brocweselmann}{linkedin.com/in/brocweselmann} $|$ 
-\href{mailto:brocweselmann@gmail.com}{brocweselmann@gmail.com} $|$ 
-\href{tel:+13863163624}{(386) 316-3624} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-% \section{Summary}
-% This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
+%-----------EDUCATION-----------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2024 - May 2027 & B.S. in Computer Science at \textbf{University of Central Florida} \hfill \normalsize \\
- & Focus: Machine Learning, Transformer Models, Mechanistic Interpretability \\
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Central Florida}{Orlando, FL}
+      {B.S. in Computer Science}{Aug. 2024 -- May 2027}
+  \resumeSubHeadingListEnd
 
-2021 - 2024 & A.S. at \textbf{Daytona State College} \hfill \\ 
-
-% 2015 - 2019 & High School Diploma at \textbf{New Smyrna Beach High School} \hfill \\
-
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PERSONAL PROJECTS
-%----------------------------------------------------------------------------------------
+%-----------PROJECTS-----------
 \section{Projects}
+    \resumeSubHeadingListStart
 
 % TraceScope (Senior Design, through May 2027): fill in and uncomment. Keep it first.
-% Keep the header short; a wide header adds a gap. Add a repo link when one is public.
-% \begin{joblong}{TraceScope | \textbf{Scrum Master, Senior Design}}{START - May 2027}
-% \item What TraceScope does and who it's for, plus team size and your Scrum role.
-% \item The mechanistic interpretability implementation you led: methods, models, tools.
-% \item Result: a demo, a measurable outcome, or an award.
-% \end{joblong}
+%      \resumeProjectHeading
+%          {\textbf{TraceScope} $|$ \emph{TECH}}{}
+%          \resumeItemListStart
+%            \resumeItem{Accomplished X, as measured by Y, by doing Z.}
+%          \resumeItemListEnd
 
-\begin{joblong}{\href{https://github.com/brocw/encyclopedia-ai}{Encyclopedia AI} | \textbf{Creator}}{July 2025 - Present}
-\item Architected a \textbf{multi-agent LLM pipeline in Go} that plans, drafts, critiques, and revises articles autonomously.
-\item Designed a provider layer for local \textbf{Ollama} and OpenAI-compatible APIs with structured output, reasoning-model streaming, and retries; ran generation as resumable background jobs persisted in \textbf{SQLite}.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/brocw/encyclopedia-ai}{Encyclopedia AI}} $|$ \emph{Go, JavaScript, Ollama, OpenRouter, SQLite, GitHub Actions}}{}
+          \resumeItemListStart
+            \resumeItem{Automated article writing by architecting a \textbf{9-stage multi-agent Go pipeline} (intake, outline, section drafting, evaluate, compare, plan, revise, metadata) that critiques and revises its own output}
+            \resumeItem{Kept tens-of-minutes reasoning runs reliable by building a provider layer for Ollama and OpenAI-compatible APIs with structured-output repair and retries, plus \textbf{resumable SQLite-backed jobs} streamed over SSE}
+          \resumeItemListEnd
 
-\begin{joblong}{\href{https://github.com/brocw/sinebot}{SINEBot} | \textbf{Developer \& Maintainer, UCF SINE}}{June 2026 - Present}
-\item Built a \textbf{JavaScript} Discord bot for UCF's Society of Innovation and Neurodiversity in Engineering (SINE), serving \textbf{about 20 daily active users} with a \textbf{plugin registry} of daily games and Chart.js analytics.
-\item Shipped features iteratively from user feedback, including leaderboards, trend graphs, and distributions.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/brocw/sinebot}{SINEBot}} $|$ \emph{JavaScript, Node.js, discord.js, Chart.js, SQLite, GitHub Actions, DigitalOcean}}{}
+          \resumeItemListStart
+            \resumeItem{Built a Discord bot for UCF's Society of Innovation and Neurodiversity in Engineering used daily by \textbf{about a dozen members on each of 2 servers}, by creating a plugin registry of daily games with Chart.js analytics}
+            \resumeItem{\textbf{Increased engagement and retention} and sparked friendly competition by shipping leaderboards, trend graphs, and distributions from user feedback}
+          \resumeItemListEnd
 
-\begin{joblong}{\href{https://github.com/brocw/mern-travel-agent}{MERN Travel Agent} | \textbf{Backend \& DevOps, Team Project}}{March 2026 - April 2026}
-\item Set up the repo, \textbf{MongoDB} database, JWT auth, and bcrypt hashing for a \textbf{React/TypeScript} web app.
-\item Automated \textbf{DigitalOcean} deploys with a \textbf{GitHub Actions} CI/CD pipeline and PR integration tests.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/brocw/mern-travel-agent}{Trip Advisor}} $|$ \emph{TypeScript, React, Express, MongoDB, JWT, GitHub Actions}}{}
+          \resumeItemListStart
+            \resumeItem{Eliminated manual FTP re-uploads of the whole project to the server (a few minutes per deploy, per developer) for a \textbf{team of 6} by automating DigitalOcean deploys with a \textbf{GitHub Actions CI/CD pipeline} and PR integration tests}
+            \resumeItem{Secured user accounts for a React/TypeScript web app by setting up the repo, MongoDB database, JWT auth, and bcrypt password hashing}
+          \resumeItemListEnd
 
-% KnightHacks IX (Fall 2026): fill in and uncomment. Keep the header short; a wide header adds a gap.
-% \begin{joblong}{\href{https://github.com/brocw/REPO}{PROJECT NAME} | \textbf{KnightHacks IX, TRACK}}{October 2026}
-% \item What you built, and the part you owned.
-% \item Result: award or placement, or a measurable outcome.
-% \end{joblong}
+% KnightHacks IX (Fall 2026): fill in and uncomment.
+%      \resumeProjectHeading
+%          {\textbf{\href{https://github.com/brocw/REPO}{PROJECT NAME}} $|$ \emph{TECH}}{}
+%          \resumeItemListStart
+%            \resumeItem{Accomplished X, as measured by Y, by doing Z.}
+%          \resumeItemListEnd
 
-\begin{joblong}{\href{https://github.com/brocw/knight\_hacks\_viii}{Drone Route Optimizer} | \textbf{Algorithm Developer, KnightHacks VIII}}{October 2025}
-\item Designed the routing algorithm for NextEra Energy's challenge using VRP heuristics and \textbf{OR-Tools}.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/brocw/knight\_hacks\_viii}{Drone Route Optimizer}} $|$ \emph{Python, OR-Tools, NumPy, Streamlit, Folium, Plotly}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Routed a drone across a graph of 2,500+ nodes} for NextEra Energy's KnightHacks VIII challenge by designing the routing algorithm with VRP heuristics and OR-Tools}
+          \resumeItemListEnd
 
-\begin{joblong}{\href{https://github.com/brocw/gpt-1}{GPT-1 Language Model} | \textbf{Personal ML Project}}{June 2026}
-\item Trained a GPT-1 transformer in \textbf{PyTorch} from Karpathy's lecture, adding scaled residuals and checkpointing.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/brocw/gpt-1}{GPT-1 Language Model}} $|$ \emph{Python, PyTorch (ROCm), NumPy}}{}
+          \resumeItemListStart
+            \resumeItem{Generated Shakespeare-style prose over a 1,000-token context window by pre-training a \textbf{GPT-1-like transformer in PyTorch} with scaled residual projections and checkpointing}
+          \resumeItemListEnd
 
-\begin{joblong}{\href{https://store.steampowered.com/app/1697070/A_Frail_Qubit/}{A Frail Qubit} | \textbf{Solo Developer}}{January 2019 - Present}
-\item Developed a story-based puzzle game end-to-end in the \textbf{Godot Engine} with \textbf{GDScript}, creating all mechanics, narrative, pixel art, and \textbf{over 60 handcrafted levels}.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://store.steampowered.com/app/1697070/A_Frail_Qubit/}{A Frail Qubit}} $|$ \emph{GDScript, Godot Engine}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Built a story-based puzzle game} with \textbf{over 60 handcrafted levels} by developing all mechanics, narrative, and pixel art solo in Godot with GDScript}
+          \resumeItemListEnd
 
-\begin{joblong}{\href{https://steamcommunity.com/sharedfiles/filedetails/?id=2438003901}{The New Order: The Last Days of Europe} | \textbf{Senior Contributor}}{January 2020 - January 2022}
-\item Implemented event chains, GUIs, and content for a total-overhaul game mod with \textbf{over 500,000 players}, and authored the contributor Git guide used by volunteers worldwide.
-\end{joblong}
+      \resumeProjectHeading
+          {\textbf{\href{https://steamcommunity.com/sharedfiles/filedetails/?id=2438003901}{The New Order: The Last Days of Europe}} $|$ \emph{Paradox Script, GitLab}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Coordinated a fully remote team of 50+ volunteers} behind a total-overhaul mod with \textbf{500,000+ players} via GitLab}
+            \resumeItem{\textbf{Onboarded over a dozen volunteers} by authoring the Git guide they used, while implementing event chains, GUIs, and content in Paradox Script}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE
-%----------------------------------------------------------------------------------------
-\section{Work Experience}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Grocery Clerk}{Aug. 2021 -- Present}
+      {Publix}{}
+      \resumeItemListStart
+        \resumeItem{\textbf{Earned 2 promotions} (Front Service Clerk to Cashier to Grocery Clerk) by cross-training at two stores}
+        \resumeItem{Kept shelves stocked and aisles maintained while averaging \textbf{30 hours per week} during school, by unloading shipments and restocking}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-\begin{joblong}{Publix | \textbf{Grocery Clerk}}{August 2021 - Present}
-\item Promoted from \textbf{Front Service Clerk to Cashier to Grocery Clerk}, cross-training at two stores.
-\item Unloaded shipments, stocked shelves, and maintained aisles while averaging \textbf{30 hours per week} during school.
-\end{joblong}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
-
-%----------------------------------------------------------------------------------------
-%	VOLUNTEERING
-%----------------------------------------------------------------------------------------
-% \section{Voluuteering}
-
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabular}{@{} l l}
-    \textbf{Languages:} &  Python, Go, TypeScript, C, GDScript \\
-    \textbf{Frameworks \& Data:} &  React, Node.js, Express, PyTorch, NumPy, SQLite, MongoDB, MySQL \\
-    \textbf{Agentic AI:} &  Claude Code, Codex, multi-agent LLM pipelines, Ollama \\
-    \textbf{Tools \& Platforms:} &  Git, GitHub Actions, GNU/Linux, DigitalOcean, Godot Engine \\
-\end{tabular}
-
-\vfill
-
-% \center{\footnotesize Last updated: \today}
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Go, JavaScript, TypeScript, C, C++, GDScript} \\
+     \textbf{Frameworks \& Data}{: React, Node.js, Express, PyTorch, NumPy, SQLite, MongoDB, MySQL} \\
+     \textbf{Agentic AI}{: Claude Code, Codex, multi-agent LLM pipelines, Ollama, Generative AI, Transformers} \\
+     \textbf{Tools \& Platforms}{: Git, GitHub Actions, GNU/Linux, DigitalOcean, Godot Engine}
+    }}
+ \end{itemize}
 
 \end{document}
