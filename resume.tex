@@ -64,7 +64,7 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1\vspace{-2pt}}
   }
 }
 
@@ -125,63 +125,51 @@
 \section{Projects}
     \resumeSubHeadingListStart
 
-% TraceScope (Senior Design, through May 2027): fill in and uncomment. Keep it first.
-%      \resumeProjectHeading
-%          {\textbf{TraceScope} $|$ \emph{TECH}}{}
-%          \resumeItemListStart
-%            \resumeItem{Accomplished X, as measured by Y, by doing Z.}
-%          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/SageSELab/Agent-Trace-Viz}{TraceScope}} $|$ \emph{TypeScript, React, Vite, Node.js, Python}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Led a 6-person senior design team} building a software development tool that turns Claude Code and Codex agent traces into evidence-backed visualizations}
+            \resumeItem{Scaffolded the MVP in strict TypeScript by \textbf{synthesizing} the team's 18 prototypes}
+          \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{\href{https://github.com/brocw/encyclopedia-ai}{Encyclopedia AI}} $|$ \emph{Go, JavaScript, Ollama, OpenRouter, SQLite, GitHub Actions}}{}
           \resumeItemListStart
-            \resumeItem{Automated article writing by architecting a \textbf{9-stage multi-agent Go pipeline} (intake, outline, section drafting, evaluate, compare, plan, revise, metadata) that critiques and revises its own output}
+            \resumeItem{Automated article writing by architecting a \textbf{9-stage Multi-Agent Go pipeline} (intake, outline, section drafting, evaluate, compare, plan, revise, metadata) that critiques and revises its own output}
             \resumeItem{Kept tens-of-minutes reasoning runs reliable by building a provider layer for Ollama and OpenAI-compatible APIs with structured-output repair and retries, plus \textbf{resumable SQLite-backed jobs} streamed over SSE}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{\href{https://github.com/brocw/sinebot}{SINEBot}} $|$ \emph{JavaScript, Node.js, discord.js, Chart.js, SQLite, GitHub Actions, DigitalOcean}}{}
           \resumeItemListStart
-            \resumeItem{Built a Discord bot for UCF's Society of Innovation and Neurodiversity in Engineering used daily by \textbf{about a dozen members on each of 2 servers}, by creating a plugin registry of daily games with Chart.js analytics}
-            \resumeItem{\textbf{Increased engagement and retention} and sparked friendly competition by shipping leaderboards, trend graphs, and distributions from user feedback}
+            \resumeItem{Built a Discord bot for UCF's Society of Innovation and Neurodiversity in Engineering used daily by \textbf{a dozen members}, by creating a plugin registry of daily games with Chart.js analytics}
+            \resumeItem{\textbf{Increased engagement and retention} and sparked friendly competition by shipping leaderboards, personal statistics, and trend graphs from user feedback}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{\href{https://github.com/brocw/mern-travel-agent}{Trip Advisor}} $|$ \emph{TypeScript, React, Express, MongoDB, JWT, GitHub Actions}}{}
           \resumeItemListStart
-            \resumeItem{Eliminated manual FTP re-uploads of the whole project to the server (a few minutes per deploy, per developer) for a \textbf{team of 6} by automating DigitalOcean deploys with a \textbf{GitHub Actions CI/CD pipeline} and PR integration tests}
+            \resumeItem{Eliminated manual FTP re-uploads to the server (a few minutes per deploy, per developer) for a \textbf{team of 6} by automating DigitalOcean deploys with a \textbf{GitHub Actions CI/CD pipeline} and PR integration tests}
             \resumeItem{Secured user accounts for a React/TypeScript web app by setting up the repo, MongoDB database, JWT auth, and bcrypt password hashing}
           \resumeItemListEnd
 
-% KnightHacks IX (Fall 2026): fill in and uncomment.
-%      \resumeProjectHeading
-%          {\textbf{\href{https://github.com/brocw/REPO}{PROJECT NAME}} $|$ \emph{TECH}}{}
-%          \resumeItemListStart
-%            \resumeItem{Accomplished X, as measured by Y, by doing Z.}
-%          \resumeItemListEnd
-
       \resumeProjectHeading
-          {\textbf{\href{https://github.com/brocw/knight\_hacks\_viii}{Drone Route Optimizer}} $|$ \emph{Python, OR-Tools, NumPy, Streamlit, Folium, Plotly}}{}
+          {\textbf{\href{https://github.com/Ywrd10/Campus-Time-Machine}{Campus Time Machine}} $|$ \emph{Python, PyTorch (ROCm), Hugging Face, Node.js, React}}{}
           \resumeItemListStart
-            \resumeItem{\textbf{Routed a drone across a graph of 2,500+ nodes} for NextEra Energy's KnightHacks VIII challenge by designing the routing algorithm with VRP heuristics and OR-Tools}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{\href{https://github.com/brocw/gpt-1}{GPT-1 Language Model}} $|$ \emph{Python, PyTorch (ROCm), NumPy}}{}
-          \resumeItemListStart
-            \resumeItem{Generated Shakespeare-style prose over a 1,000-token context window by pre-training a \textbf{GPT-1-like transformer in PyTorch} with scaled residual projections and checkpointing}
+            \resumeItem{\textbf{Generated AI videos of UCF in 37 seconds} on an AMD W7900D with Kandinsky 6 Lite and PyTorch/ROCm for KnightHacks IX}
+            \resumeItem{Designed a Node relay that archives videos to \textbf{Hugging Face Buckets}, so the shared gallery outlives the GPU}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{\href{https://store.steampowered.com/app/1697070/A_Frail_Qubit/}{A Frail Qubit}} $|$ \emph{GDScript, Godot Engine}}{}
           \resumeItemListStart
-            \resumeItem{\textbf{Built a story-based puzzle game} with \textbf{over 60 handcrafted levels} by developing all mechanics, narrative, and pixel art solo in Godot with GDScript}
+            \resumeItem{\textbf{Built a story-based puzzle game} with \textbf{over 60 handcrafted levels}, developing all mechanics, narrative, and pixel art solo}
           \resumeItemListEnd
 
       \resumeProjectHeading
           {\textbf{\href{https://steamcommunity.com/sharedfiles/filedetails/?id=2438003901}{The New Order: The Last Days of Europe}} $|$ \emph{Paradox Script, GitLab}}{}
           \resumeItemListStart
-            \resumeItem{\textbf{Coordinated a fully remote team of 50+ volunteers} behind a total-overhaul mod with \textbf{500,000+ players} via GitLab}
+            \resumeItem{\textbf{Coordinated a remote team of 50+ volunteers} behind a total-overhaul mod with \textbf{500,000+ players}}
             \resumeItem{\textbf{Onboarded over a dozen volunteers} by authoring the Git guide they used, while implementing event chains, GUIs, and content in Paradox Script}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
@@ -194,7 +182,7 @@
       {Publix}{}
       \resumeItemListStart
         \resumeItem{\textbf{Earned 2 promotions} (Front Service Clerk to Cashier to Grocery Clerk) by cross-training at two stores}
-        \resumeItem{Kept shelves stocked and aisles maintained while averaging \textbf{30 hours per week} during school, by unloading shipments and restocking}
+        \resumeItem{Stocked shelves and engaged with customers while averaging \textbf{30 hours per week} during school, by unloading shipments and restocking}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -204,7 +192,7 @@
     \small{\item{
      \textbf{Languages}{: Python, Go, JavaScript, TypeScript, C, C++, GDScript} \\
      \textbf{Frameworks \& Data}{: React, Node.js, Express, PyTorch, NumPy, SQLite, MongoDB, MySQL} \\
-     \textbf{Agentic AI}{: Claude Code, Codex, multi-agent LLM pipelines, Ollama, Generative AI, Transformers} \\
+     \textbf{Agentic AI}{: Claude Code, Codex, Multi-Agent LLM pipelines, Ollama, Generative AI, Transformers} \\
      \textbf{Tools \& Platforms}{: Git, GitHub Actions, GNU/Linux, DigitalOcean, Godot Engine}
     }}
  \end{itemize}
